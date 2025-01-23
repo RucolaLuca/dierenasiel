@@ -1,0 +1,2 @@
+Schema met alle feeding schedules waar als je op klikt 
+je kan zien welke dieren erbij zitten
