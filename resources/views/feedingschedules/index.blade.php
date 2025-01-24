@@ -1,10 +1,11 @@
 <x-base-layout>
-    <h1>Feeding Schedules</h1>
-    <ul>
-        @foreach ($feedingSchedules as $feedingSchedule)
-            <li>
-                <a href="{{ route('feeding_schedules.show', $feedingSchedule->id) }}">{{ $feedingSchedule->name }}</a>
-            </li>
+    <h1 style="text-align: center">Feeding Schedules</h1>
+    <div class="feeding-schedules-container">
+        @foreach ($feedingschedules as $feedingschedule)
+            <div class="feeding-schedule-item">
+                <h2><a href="{{ route('feedingschedules.show', $feedingschedule->id) }}">{{ $feedingschedule->name }}</a></h2>
+                <p>{{ $feedingschedule->description }}</p>
+            </div>
         @endforeach
-    </ul>
+    </div>
 </x-base-layout>

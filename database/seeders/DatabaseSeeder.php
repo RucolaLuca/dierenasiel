@@ -24,9 +24,9 @@ class DatabaseSeeder extends Seeder
         $this->call([
             FeedingScheduleSeeder::class,
             MedicalTreatmentSeeder::class,
-            AdopterSeeder::class,
             SpeciesSeeder::class,
             AnimalSeeder::class,
+            AdopterSeeder::class,
             AdoptionSeeder::class,
         ]
         );

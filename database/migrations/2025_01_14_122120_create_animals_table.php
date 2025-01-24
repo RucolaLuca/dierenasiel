@@ -23,13 +23,11 @@ return new class extends Migration
             $table->string("gender");
             $table->string("medical_history");
             $table->unsignedBigInteger("feedingschedule_id")->nullable();
-
-            $table->timestamps();
-            
             $table->foreign("feedingschedule_id")
             ->references("id")
             ->on("feeding_schedules");
-         
+            $table->timestamps();
+            
         });
     }
 

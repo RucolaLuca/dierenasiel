@@ -32,8 +32,10 @@
             <option value="{{ $feeding_schedule->id }}" {{ $animals->feedingschedule_id == $feeding_schedule->id ? 'selected' : '' }}>{{ $feeding_schedule->name }}</option>
         @endforeach
     </select>
-    
-    <button type="submit">Update Animal</button>
+    <div class="button-group">
+        <button type="submit" class="create-submit">Update Animal</button>
+        <a href="{{ url('animals.show')}}" class="button-link">Return Without Changes</a>
+    </div>
 </form>
 @if ($errors->any())
     <div class="alert alert-danger">
@@ -44,5 +46,4 @@
         </ul>
     </div>
 @endif
-<a href="http://dierenasiel.test/animals/show">Return Without Changes</a>
 </x-base-layout>

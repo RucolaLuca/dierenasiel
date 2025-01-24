@@ -3,6 +3,7 @@
 use App\Http\Controllers\AnimalController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\FeedingScheduleController;
+use App\Http\Controllers\AdopterController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -28,7 +29,17 @@ Route::post('/animals/update/{id}', [AnimalController::class, 'update'])->name('
 Route::get('/animals/delete/{id}', [AnimalController::class, 'delete'])->name('animals.delete');
 Route::get('/animals/search', [AnimalController::class, 'search'])->name('animals.search');
 
-Route::get('/feedingschedules', [FeedingScheduleController::class, 'index']);
+Route::get('/feedingschedules', [FeedingScheduleController::class, 'index'])->name('feedingschedules.index');
 Route::get('/feedingschedules/show/{id}', [FeedingScheduleController::class, 'show'])->name('feedingschedules.show');
+Route::get('/feedingschedules/create', [FeedingScheduleController::class, 'create'])->name('feedingschedules.create');
+Route::post('/feedingschedules/store', [FeedingScheduleController::class, 'store'])->name('feedingschedules.store');
+Route::get('/feedingschedules/edit/{id}', [FeedingScheduleController::class, 'edit'])->name('feedingschedules.edit');
+Route::post('/feedingschedules/update/{id}', [FeedingScheduleController::class, 'update'])->name('feedingschedules.update');
+Route::get('/feedingschedules/delete/{id}', [FeedingScheduleController::class, 'delete'])->name('feedingschedules.delete');
+
+Route::get('/adopters', [AdopterController::class, 'index'])->name('adopters.index');
+Route::get('/adopters/show/{id}', [AdopterController::class, 'show'])->name('adopters.show');
+Route::get('/adopters/create', [AdopterController::class, 'create'])->name('adopters.create');
+Route::post('/adopters/store', [AdopterController::class, 'store'])->name('adopters.store');
 
 require __DIR__.'/auth.php';

@@ -1,4 +1,5 @@
 <x-base-layout>
+<h1 class="animal-create">Create an Animal</h1>
 <form action="/animals/store" method="post">
     @csrf
     <label for="name">Name</label>
@@ -33,7 +34,7 @@
         @endforeach
     </select>
     
-    <button type="submit">Post Animal</button>
+    <button type="submit" class="create-submit">Post Animal</button>
 </form>
 
 @if ($errors->any())
